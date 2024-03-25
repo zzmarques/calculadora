@@ -1,0 +1,107 @@
+/* Cores
+  #10182B
+  #213259
+  #304982
+  #3F60AB
+  #4E76D4
+
+*/
+:root {
+    --cor01: #10182B;
+    --cor02: #213259;
+    --cor03: #304982;
+    --cor04: #3F60AB;
+    --cor05: #4E76D4;
+}
+
+* {
+
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient(to right, var(--cor01), var(--cor02), var(--cor03));
+
+
+}
+
+
+#cal {
+    display: grid;
+    grid-template-columns: repeat(4, 70px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 70px);
+    justify-content: center;
+    align-content: center;
+    width: 345px;
+    height: 550px;
+    border: 3px solid white;
+    border-radius: 10px;
+    gap: 6px;
+
+}
+
+
+
+
+button {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.1em;
+    color: white;
+    background-color: var(--cor01);
+    border: none;
+    border-radius: 8px;
+}
+
+button:hover {
+    background-color: var(--cor03);
+}
+
+.op {
+    background-color: var(--cor05);
+    border: 1px solid var(--cor05);
+}
+.op:hover {
+    background-color: var(--cor01);
+    border: none;
+}
+#a {
+    border-radius: 0px 0px 0px 10px;
+}
+#b {
+    border-radius: 0px 0px 10px 0px;
+}
+#cal > .output {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-around;
+    grid-column: 1 / -1;
+    background-color: var(--cor01);
+    color: white;
+    border-radius: 8px;
+    padding: 26px;
+    word-wrap: break-word;
+    word-break: break-all;
+    
+}
+
+#cal > .output > .previous-operand {
+    color: rgba(255, 255, 255, 0.418);
+    
+    font-size: 1em;
+}
+
+#cal > .output > .current-operand {
+    color: white;
+    font-size: 1.3em;
+}
