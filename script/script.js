@@ -67,7 +67,7 @@ function addDisplay(value) {
 
 function processOperation(value) {
     previousOperand.innerHTML = currentOperand.innerText + ' ' + value
-    currentOperand.innerText = ''    
+    currentOperand.innerText = ''
 }
 
 function adic(n1, n2) {
@@ -94,22 +94,3 @@ function resto(n1, n2) {
     currentOperand.innerHTML = n1 % n2
     previousOperand.innerHTML = ''
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
