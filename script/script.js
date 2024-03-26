@@ -5,7 +5,7 @@ const allClear = document.getElementById('all-clear');
 const clear =  document.getElementById('clear');
 const del = document.getElementById('delete')
 const result  = document.querySelector('.resul')
-
+const posNeg = document.querySelector('.pn')
 
 allClear.addEventListener('click', () => {
     previousOperand.innerText = ''
@@ -20,6 +20,14 @@ del.addEventListener('click', () => {
     currentOperand.innerHTML =
     currentOperand.innerHTML.slice(0, -1)
 });
+
+posNeg.addEventListener('click', () => {
+    const num1 = Number(currentOperand.innerText)
+    if (currentOperand.innerText === '') {
+        return
+    }
+    currentOperand.innerHTML = num1 * -1
+})
 
 result.addEventListener('click', () => {
     const num1 = Number(previousOperand.innerText.split(' ')[0])
@@ -38,9 +46,6 @@ result.addEventListener('click', () => {
             break
         case '*':
             mult(num1, num2)
-            break
-        case '%':
-            resto(num1, num2)
             break
     }
     
@@ -87,10 +92,5 @@ function div(n1, n2) {
 
 function mult(n1, n2) {
     currentOperand.innerHTML = n1 * n2
-    previousOperand.innerHTML = ''
-}
-
-function resto(n1, n2) {
-    currentOperand.innerHTML = n1 % n2
     previousOperand.innerHTML = ''
 }
