@@ -71,6 +71,9 @@ function addDisplay(value) {
 }
 
 function processOperation(value) {
+    if (currentOperand.innerText === '' && previousOperand.innerText === '') {
+        return
+    } 
     previousOperand.innerHTML = currentOperand.innerText + ' ' + value
     currentOperand.innerText = ''
 }
