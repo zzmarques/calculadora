@@ -6,6 +6,7 @@ const clear =  document.getElementById('clear');
 const del = document.getElementById('delete')
 const result  = document.querySelector('.resul')
 const posNeg = document.querySelector('.pn')
+const operands = document.querySelectorAll('.op')
 
 allClear.addEventListener('click', () => {
     previousOperand.innerText = ''
@@ -62,6 +63,12 @@ buttons.forEach((btn) => {
     });
 });
 
+operands.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+        const operation = e.target.innerText;
+        changeOperation(operation)
+    });
+});
 
 function addDisplay(value) {
     if (value === '.' && currentOperand.innerHTML.includes('.')){
@@ -71,11 +78,19 @@ function addDisplay(value) {
 }
 
 function processOperation(value) {
-    if (currentOperand.innerText === '' && previousOperand.innerText === '') {
+    if (currentOperand.innerText === '' && previousOperand.innerText === '' ||      previousOperand.innerText !== '') {
         return
-    } 
+    }
     previousOperand.innerHTML = currentOperand.innerText + ' ' + value
     currentOperand.innerText = ''
+}
+
+function changeOperation(operation) {
+    if (previousOperand.innerText != '') {
+        previousOperand.innerText =
+        previousOperand.innerText.slice(0, -1) + operation
+    }
+    
 }
 
 function adic(n1, n2) {
