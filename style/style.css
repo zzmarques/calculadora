@@ -66,11 +66,11 @@ button:hover {
     background-color: var(--cor03);
 }
 
-.op, .pn, .p {
+.cb {
     background-color: var(--cor05);
     border: 1px solid var(--cor05);
 }
-.op:hover, .pn:hover, .p:hover {
+.cb:hover {
     background-color: var(--cor03);
     border: none;
 }

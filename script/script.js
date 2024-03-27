@@ -74,6 +74,9 @@ function addDisplay(value) {
     if (value === '.' && currentOperand.innerHTML.includes('.')){
         return
     }
+    if (value === '.' && currentOperand.innerText === '') {
+        return
+    }
     currentOperand.innerHTML += value;
 }
 
