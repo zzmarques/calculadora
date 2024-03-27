@@ -70,7 +70,7 @@ button:hover {
     background-color: var(--cor05);
     border: 1px solid var(--cor05);
 }
-.op:hover {
+.op:hover, .pn:hover {
     background-color: var(--cor03);
     border: none;
 }
